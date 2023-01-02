@@ -62,7 +62,7 @@
                 city.replace(' ','%20')
             }
             console.log(city)
-            const data = await fetch('http://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=0c42f7f6b53b244c78a418f4f181282a')
+            const data = await fetch('https://api.openweathermap.org/data/2.5/weather?q='+city+'&appid=0c42f7f6b53b244c78a418f4f181282a')
             const jsonData = await data.json()
             console.log(jsonData['name'],jsonData['sys']['country'])
             document.getElementById('cityName').innerText = (jsonData['name']+', '+jsonData['sys']['country'])
