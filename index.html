@@ -36,6 +36,11 @@
         background-color: white;
 
     }
+    .dataBox{
+        display: flex;
+        width: 30vw;
+        justify-content: space-between;
+    }
     </style>
 </head>
 <body>
@@ -50,10 +55,23 @@
             <h2 id="cityName"></h2>
         </div>
         <div style="display: flex; margin-top: 10px;">
-            <img src="" width="50px" alt="icon" id="icon" hidden>
+            <img src="" width="60px" alt="icon" id="icon" hidden>
             <h3 id="temp"></h3>
         </div>
-        <h4 id="humidity"></h4>
+        <div class="dataBox">
+        <div>
+            <h4 id="climate"></h4>
+            <h4 id="wind"></h4>
+        </div>
+        <div>
+                
+            <h4 id="visiblity"></h4>
+            <h4 id="humidity"></h4>
+
+        </div>
+  
+        </div>
+        
     </div>
     <script>
         async function search(){
@@ -70,6 +88,10 @@
             document.getElementById('icon').hidden = false;
             document.getElementById('temp').innerText = (jsonData['main']['temp'] - 273.16) + ' C';
             document.getElementById('humidity').innerText = 'Humidity : '+ jsonData['main']['humidity']
+            document.getElementById('wind').innerText = 'Wind Speed : '+ jsonData['wind']['speed']
+            document.getElementById('visiblity').innerText = 'Visibility : '+ String(jsonData['visibility']/1000)
+            document.getElementById('climate').innerText = 'Climate : '+ jsonData['weather'][0]['main']
+
              
         }
     </script>
