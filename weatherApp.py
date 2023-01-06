@@ -15,8 +15,7 @@ while True:
         continue
 
     else:
-        print(data)
-        # print("Location is ",data['name'],', ',data['sys']['country'],sep='')
-        # print("Weather of your location is",data["weather"][0]["main"])
-        # print("Temprature of your location is",data['main']['temp'] - 273.16)
-        # print("windspeed of your location is",data["wind"]["speed"],'kmph')
+        print("Location is ",data['name'],', ',data['sys']['country'],sep='')
+        print("Weather of your location is",data["weather"][0]["main"])
+        print("Temprature of your location is",data['main']['temp'] - 273.16)
+        print("windspeed of your location is",data["wind"]["speed"],'kmph')
